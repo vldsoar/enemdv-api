@@ -1,0 +1,22 @@
+[
+  {
+    "wording": "Test 1",
+    "options": [
+      { "description": "1" },
+      { "description": "2" },
+      { "description": "3" },
+      { "description": "4" },
+      { "description": "5", "veracity": true }
+    ]
+  },
+  {
+    "wording": "Test 2",
+    "options": [
+      { "description": "3, 2 and 1" },
+      { "description": "1, 2 and 3" },
+      { "description": "1 and 2" },
+      { "description": "Only 1" },
+      { "description": "1 and 3", "veracity": true }
+    ]
+  }
+]
