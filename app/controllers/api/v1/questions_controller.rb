@@ -23,4 +23,11 @@ class Api::V1::QuestionsController < ApplicationController
     def set_question
       @question = @exam.find_by!(id: params[:id]) if @exam
     end
+
+    def question_params
+      params.require(:question).permit(
+        :wording, :exam_id,
+        options_attributes: [:description, :veracity]
+      )
+    end
 end

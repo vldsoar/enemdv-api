@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180720233030) do
   create_table "options", force: :cascade do |t|
     t.string "description"
     t.boolean "veracity", default: false
-    t.integer "question_id"
+    t.bigint "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_options_on_question_id"
@@ -30,10 +30,12 @@ ActiveRecord::Schema.define(version: 20180720233030) do
 
   create_table "questions", force: :cascade do |t|
     t.text "wording"
-    t.integer "exam_id"
+    t.bigint "exam_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["exam_id"], name: "index_questions_on_exam_id"
   end
 
+  add_foreign_key "options", "questions"
+  add_foreign_key "questions", "exams"
 end
