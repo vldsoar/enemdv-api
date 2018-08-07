@@ -7,11 +7,11 @@ class Api::V1::QuestionsController < ApplicationController
                       .page(params[:page])
                       .per(params[:per] || 1)
 
-    render json: {questions: @exam.questions, meta: pagination_meta(@questions)}
+    render json: {questions: @exam.questions, meta: pagination_meta(@questions)}, include: :options
   end
 
   def show
-    render json: @question
+    render json: @question, include: :options
   end
 
   private
